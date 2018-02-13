@@ -24,10 +24,7 @@ import java.util.Calendar;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    EditText female, male;
-    Button calculate;
-    TextView result;
-    ImageView love;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        female = findViewById(R.id.female);
-        male = findViewById(R.id.male);
-        calculate = findViewById(R.id.calculate);
-        result = findViewById(R.id.result);
-        love = findViewById(R.id.love);
+        final EditText female = findViewById(R.id.female);
+        final EditText  male = findViewById(R.id.male);
+        Button calculate = findViewById(R.id.calculate);
+        final TextView result = findViewById(R.id.result);
+        final ImageView love = findViewById(R.id.love);
 
        /* AdView adView = new AdView(this);
         adView.setAdSize(AdSize.BANNER);
