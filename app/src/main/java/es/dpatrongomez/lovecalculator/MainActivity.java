@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText  male = findViewById(R.id.male);
         Button calculate = findViewById(R.id.calculate);
         final TextView result = findViewById(R.id.result);
-        final ImageView love = findViewById(R.id.love);
+       // final ImageView love = findViewById(R.id.love);
 
        /* AdView adView = new AdView(this);
         adView.setAdSize(AdSize.BANNER);
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     RotateAnimation rotate = new RotateAnimation(0, 360,
                             RotateAnimation.RELATIVE_TO_SELF, 0.5f, RotateAnimation.RELATIVE_TO_SELF, 0.5f);
                     rotate.setDuration(100);
-                    love.startAnimation(rotate);
+                   // love.startAnimation(rotate);
                     result.startAnimation(rotate);
 
                     String mujer = female.getText().toString();
