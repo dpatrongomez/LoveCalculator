@@ -13,13 +13,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.util.Calendar;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
         final TextView result = findViewById(R.id.result);
         final ImageView love = findViewById(R.id.love);
 
-        AdView adView = new AdView(this);
-        adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-3101409762374546/2490229297");
+        MobileAds.initialize(this, "ca-app-pub-3101409762374546~7934127665");
 
-
+        AdView adView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
         calculate.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
