@@ -27,15 +27,25 @@
     <TextView
         android:id="@+id/result"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="274dp"
         android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/love"
         android:gravity="center"
         android:textColor="#ffffff"
         android:textSize="30sp"
+        app:layout_anchor="@+id/adView"
+        app:layout_anchorGravity="top|center"
+        tools:layout_editor_absoluteY="293dp" />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        ads:adSize="BANNER"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="bottom|center" />
-
-
-
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        app:layout_anchorGravity="bottom|center"
+        ads:adUnitId="ca-app-pub-3101409762374546/2490229297"/>
 </android.support.design.widget.CoordinatorLayout>

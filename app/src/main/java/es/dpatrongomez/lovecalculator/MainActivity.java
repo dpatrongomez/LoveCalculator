@@ -13,6 +13,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+
 import java.util.Calendar;
 import java.util.Random;
 
@@ -31,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
         final TextView result = findViewById(R.id.result);
         final ImageView love = findViewById(R.id.love);
 
-       /* AdView adView = new AdView(this);
+        AdView adView = new AdView(this);
         adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");*/
+        adView.setAdUnitId("ca-app-pub-3101409762374546/2490229297");
 
 
 
