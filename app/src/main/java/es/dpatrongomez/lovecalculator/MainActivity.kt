@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.os.SystemClock
+import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.View
@@ -28,14 +29,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        //val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        //setSupportActionBar(toolbar)
 
         val female = findViewById<EditText>(R.id.female)
         val male = findViewById<EditText>(R.id.male)
-        val calculate = findViewById<Button>(R.id.calculate)
         val result = findViewById<TextView>(R.id.result)
         val love = findViewById<ImageView>(R.id.love)
+        val floatbutton = findViewById<FloatingActionButton>(R.id.floatbutton)
 
         MobileAds.initialize(this, "ca-app-pub-3101409762374546~7934127665")
 
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         val adRequest = AdRequest.Builder().build()
         adView.loadAd(adRequest)
 
-        calculate.setOnClickListener {
+        floatbutton.setOnClickListener {
             val teclado = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             teclado.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
             if (!female.text.toString().isEmpty() && !male.text.toString().isEmpty()) {

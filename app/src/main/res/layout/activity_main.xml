@@ -1,35 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context="es.dpatrongomez.lovecalculator.MainActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+    <!-- <android.support.design.widget.AppBarLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/appBarLayout">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+         <android.support.v7.widget.Toolbar
+             android:id="@+id/toolbar"
+             android:layout_width="match_parent"
+             android:layout_height="?attr/actionBarSize"
+             android:background="?attr/colorPrimary"
+             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    </android.support.design.widget.AppBarLayout>
+     </android.support.design.widget.AppBarLayout> -->
 
     <include
         android:id="@+id/include"
-        layout="@layout/content_main" />
+        layout="@layout/content_main"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <EditText
+        android:id="@+id/female"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/female_name"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_anchor="@+id/include"
+        android:textColor="#FFFF"
+        app:layout_anchorGravity="top|center" />
+
+    <EditText
+        android:id="@+id/male"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/female"
+        android:layout_below="@+id/female"
+        android:layout_marginTop="49dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/male_name"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="#FFFF"
+        app:layout_anchor="@+id/result"
+        app:layout_anchorGravity="top|center" />
 
     <TextView
         android:id="@+id/result"
         android:layout_width="match_parent"
-        android:layout_height="274dp"
+        android:layout_height="200dp"
+        android:layout_above="@+id/adView"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/love"
+        android:layout_marginBottom="30dp"
         android:gravity="center"
         android:textColor="#ffffff"
         android:textSize="30sp"
@@ -38,14 +76,26 @@
         tools:layout_editor_absoluteY="293dp" />
 
     <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView"
-        ads:adSize="BANNER"
+         xmlns:ads="http://schemas.android.com/apk/res-auto"
+         android:id="@+id/adView"
+         ads:adSize="BANNER"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         app:layout_anchor="@+id/include"
+         android:layout_centerHorizontal="true"
+         android:layout_alignParentBottom="true"
+         app:layout_anchorGravity="bottom|center"
+         ads:adUnitId="ca-app-pub-3101409762374546/2490229297"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_anchor="@+id/include"
+        android:layout_below="@+id/male"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        app:layout_anchorGravity="bottom|center"
-        ads:adUnitId="ca-app-pub-3101409762374546/2490229297"/>
-</android.support.design.widget.CoordinatorLayout>
+        android:layout_marginTop="46dp"
+        android:clickable="true"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="right|center"
+        app:srcCompat="@android:drawable/ic_media_play" />
+</RelativeLayout>
