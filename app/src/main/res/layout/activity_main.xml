@@ -27,7 +27,9 @@
         layout="@layout/content_main"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        tools:layout_editor_absoluteY="55dp" />
+        tools:layout_editor_absoluteY="55dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
 
     <EditText
         android:id="@+id/female"
@@ -38,7 +40,6 @@
         android:layout_marginTop="41dp"
         android:background="@drawable/rounded_edittext"
         android:ems="10"
-        android:hint="@string/female_name"
         android:inputType="textPersonName"
         android:textAlignment="center"
         app:layout_anchor="@+id/include"
@@ -54,7 +55,6 @@
         android:layout_marginTop="49dp"
         android:background="@drawable/rounded_edittext"
         android:ems="10"
-        android:hint="@string/male_name"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColor="#FFFF"
